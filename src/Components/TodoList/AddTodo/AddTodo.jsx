@@ -1,5 +1,7 @@
+import { useDispatch } from "react-redux";
 import { util } from "../../../utils/index";
 import s from "./AddTodo.module.css";
+import { addTodo, editTodo } from '../../../store/actions';
 
 function AddTodo ({
         title,
@@ -8,8 +10,8 @@ function AddTodo ({
         setDescriprion,
         editableTask,
         setEditableTask,
-        setTasks
     }) {
+    const dispatch = useDispatch();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -20,10 +22,10 @@ function AddTodo ({
         };
 
         if (editableTask) {
-            setTasks((prev) => prev.map((task) => task.id === editableTask.id ? {...todo, id: editableTask.id} : task));
+            dispatch(editTodo({...todo, id: editableTask.id}));
             setEditableTask(null);
         } else {
-            setTasks((prev) => [...prev, {...todo, id: Math.random()}]);
+            dispatch(addTodo({...todo, id: Math.random()}));
         }
 
         setTitle('');

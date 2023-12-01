@@ -1,13 +1,12 @@
 import React from 'react';
-import s from './List.module.css'
-
+import s from '../List/List.module.css'
+import { useSelector } from 'react-redux';
 
 const List = React.memo(({
-    tasks,
     deleteTask,
     editTask,
 }) => {
-
+const tasks = useSelector((state) => state.todoList);
 return (
     <ul className={s.list}>
         {tasks.map((task) => {
