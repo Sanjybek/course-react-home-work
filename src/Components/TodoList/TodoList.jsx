@@ -2,9 +2,11 @@ import { useCallback, useState } from "react";
 
 import AddTodo from "./AddTodo/AddTodo";
 import List from "./List/List";
+import { useDispatch } from "react-redux";
+import {deleteTodo} from '../../store/actions';
 
 function TodoList () {
-    const [tasks, setTasks] = useState([]);
+    const dispatch = useDispatch();
 
     const [editableTask, setEditableTask] = useState(null);
 
@@ -12,15 +14,17 @@ function TodoList () {
     const [descriprion, setDescriprion] = useState('');
 
     const deleteTask = useCallback((id) => {
-        setTasks((prev) => prev.filter((task) => task.id !== id));
+        dispatch(deleteTodo(id));
     }, []);
 
     const editTask = useCallback((task) => {
         const { title, descriprion } = task;
         setTitle(title);
         setDescriprion(descriprion);
+        
         setEditableTask(task);
     }, []);
+
     return (
         <>
             <AddTodo
@@ -30,10 +34,8 @@ function TodoList () {
                 setDescriprion={setDescriprion}
                 editableTask={editableTask}
                 setEditableTask={setEditableTask}
-                setTasks={setTasks}
             />
             <List
-                tasks={tasks}
                 deleteTask={deleteTask}
                 editTask={editTask}
             />
