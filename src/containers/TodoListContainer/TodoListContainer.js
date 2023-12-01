@@ -1,11 +1,10 @@
+import React from 'react';
 import { useCallback, useState } from "react"
-import List from "./Components/List/List"
-import AddTodo from "./Components/AddTodo/AddTodo"
 import { useDispatch } from 'react-redux'
 import { deleteTodo } from "../Store"
-
-function TodoList () {
-  const dispatch = useDispatch()
+import TodoListRedux from '../../Components/TodoListRedux/TodoListRedux'
+function TodoListContainer () {
+    const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const [desc, setDesc] = useState('')    
     const [item, setItem] = useState(null) 
@@ -24,28 +23,18 @@ function TodoList () {
         setItem(arr)
       // }
     }, [])
-    
-
-    return (
-        <>
-          
-          <AddTodo
+    return <TodoListRedux
             title={title}
             desc={desc}
             setTitle={setTitle}
             setDesc={setDesc}
             setItem={setItem}
             item={item}
-           
-          />
-          
-          <List
-          delet={delet}
-          startEditing={startEditing}
-        
-          />
-        </>
-       
-    )
-}
-export default TodoList
+
+            delet={delet}
+            startEditing={startEditing}
+            />
+    
+};
+
+export default TodoListContainer;

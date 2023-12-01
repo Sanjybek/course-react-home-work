@@ -1,9 +1,9 @@
 
 import { useDispatch } from 'react-redux'
-import { addTodo, editTodo } from '../../../Store';
+// import { addTodo, editTodo } from '../../../../Store/index';
+import {addTodo , editTodo} from '../../../../Store/index'
 import s from './AddTodo.module.css'
 function AddTodo ({title,desc,setTitle, setDesc,setItem, item, }) {
-    console.log(title);
     const dispatch = useDispatch()
     const addTitle = () => {
         if(title.trim() !== '' && desc.trim() !== '') {
@@ -16,6 +16,7 @@ function AddTodo ({title,desc,setTitle, setDesc,setItem, item, }) {
             setDesc('');
         } else {
             dispatch(addTodo({title, desc, id: Math.random()}))
+            dispatch(addTodo())
             setTitle('');
             setDesc('');
         }  
