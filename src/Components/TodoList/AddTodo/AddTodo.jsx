@@ -25,7 +25,7 @@ function AddTodo ({
             dispatch(editTodo({...todo, id: editableTask.id}));
             setEditableTask(null);
         } else {
-            dispatch(addTodo({...todo, id: Math.random()}));
+            dispatch(addTodo({...todo, id: Math.random(), isDone: false, checkBox: false}));
         }
 
         setTitle('');

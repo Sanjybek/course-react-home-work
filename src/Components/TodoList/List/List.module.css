@@ -18,18 +18,30 @@
     width: 400px;
 }
 
+.taskDone {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(52, 50, 50);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px rgb(71, 65, 65);
+    width: 400px;
+    background-color: blueviolet;
+}
+
 .btnWrapper {
     margin-top: 10px;
     display: flex;
     justify-content: end;
     gap: 5px;
+    cursor: pointer;
 }
 
 .delete {
     cursor: pointer;
     padding: 5px 15px;
     border: none;
-    background-color: rgb(192, 78, 78);
+    background-color: red;
     color: #fff;
 }
 .delete:hover {
@@ -40,7 +52,7 @@
     cursor: pointer;
     padding: 5px 15px;
     border: none;
-    background-color: rgb(106, 106, 156);
+    background-color: green;
     color: #fff;
 }
 .edit:hover {
@@ -53,4 +65,17 @@
 
 .descriprion {
     font-size: 12px;
+}
+.title_cl {
+    text-decoration: underline;
+    color: chocolate;
+}
+
+.descriprion_cl {
+    text-decoration: underline;
+    color: chocolate;
+}
+.block {
+    display: flex;
+    justify-content: space-between;
 }
