@@ -18,6 +18,16 @@ const todoReducer = (state = initialState, action) => {
                 ...state,
                 todoList: state.todoList.map((todo) => todo.id === action.payload.id ? action.payload : todo),
             };
+        case 'ON_DONE': 
+            return {
+                ...state,
+                todoList: state.todoList.map((todo) => todo.id === action.payload ? {...todo, isDone: !todo.isDone} : todo),
+            };
+        case 'ON_CHECKBOX': 
+            return {
+                ...state,
+                todoList: state.todoList.map((todo) => todo.id === action.payload ? {...todo, checkBox: !todo.checkBox} : todo),
+            };
         default: 
             return state
     }

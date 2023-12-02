@@ -1,7 +1,8 @@
-import TodoList from "../../Components/TodoList/TodoList";
+// import TodoList from "../../Components/TodoList/TodoList";
+import TodoListContainer from "../../containers/TodoListContainer/TodoListContainer";
 
 function TodoListPage () {
-    return <TodoList/>
+    return <TodoListContainer/>
 }
 
 export default TodoListPage;

@@ -18,5 +18,17 @@ function editTodo (todo) {
         payload: todo,
     }
 }
+function onDoneTodo (data) {
+    return {
+        type: 'ON_DONE',
+        payload: data
+    }
+}
+function onCheckBox (id) {
+    return {
+        type: 'ON_CHECKBOX',
+        payload: id
+    }
+}
 
-export { addTodo, deleteTodo, editTodo };
+export { addTodo, deleteTodo, editTodo ,  onDoneTodo, onCheckBox};
