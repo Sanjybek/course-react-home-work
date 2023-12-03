@@ -1,6 +1,5 @@
 export const initialState = {
-    todoList: [],
-
     posts: [],
-    users: [],
-};
+    isLoad: false,
+    error: ''
+}
