@@ -1,3 +1,5 @@
 export const initialState = {
-    posts: []
+    posts: [],
+    isLoad: false,
+    error: ''
 }
