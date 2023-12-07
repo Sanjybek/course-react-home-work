@@ -2,3 +2,14 @@
     display: flex;
     gap: 20px;
 }
+.headerLogo {
+    color: aliceblue;
+    font-size: 40px;
+}
+.header_menu {
+    display: flex;
+    justify-content: space-between;
+}
+.theme {
+    color: red;
+}

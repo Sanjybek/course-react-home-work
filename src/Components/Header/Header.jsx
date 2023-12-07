@@ -1,32 +1,46 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import s from './Hedaer.module.css'
-
+import {Layout, Menu} from 'antd';
+const navList = [
+    {
+        key: '/',
+        label: 'Header'
+    },
+    {
+        key: '/posts',
+        label: 'Post'
+    },
+    {
+        key: '/comments',
+        label: 'Comments'
+    },
+    {
+        key: '/albums',
+        label: 'Albums'
+    },
+    {
+        key: '/photos',
+        label: 'TodosPage'
+    }
+]
 function Header  () {
-    return (
-        <>
-            <ul>
-                <li className={s.li_header}>
-                    <Link to={'/'}>
-                        header
-                    </Link>
+    const navigate = useNavigate()
+    const menu = (e) => {
+        console.log(e);
 
-                    <Link to={'/posts'}>
-                        Posts
-                    </Link>
-                    <Link to={'/comments'}>
-                        Comments
-                    </Link>
-                    <Link to={'/albums'}>
-                        Albums
-                    </Link>
-                    <Link to={'/photos'}>
-                        Photos
-                    </Link>
-                </li>
-            </ul>
-            
-        </>
+        navigate(e.key)
+    }
+    return (
+        <Layout.Header className={s.header_menu}>
+            <div className={s.headerLogo}>LOGO</div>
+            <Menu onClick={menu}
+                theme="dark"
+                mode='horizontal'
+                items={navList}
+                
+            />
+        </Layout.Header>
     );
 };
 
