@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchTodos } from '../../store/todos/actions';
 import { getTodos } from '../../store/todos/selector';
 
-const PhotosContainer = () => {
+const TodosContainer = () => {
     const dispatch = useDispatch()
     const {isLoad, error, todos} = useSelector(getTodos)
     useEffect(() => {
@@ -18,4 +18,4 @@ const PhotosContainer = () => {
     );
 };
 
-export default PhotosContainer;
+export default TodosContainer;

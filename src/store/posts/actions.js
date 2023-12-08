@@ -4,7 +4,7 @@ export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
     async (_, thunkAPI) => {
         try {
-            const response = await API.get('posts')
+            const response = await API.get('post')
             return response.data
 
         } catch (e) {

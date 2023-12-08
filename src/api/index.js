@@ -1,9 +1,8 @@
+import { App } from 'antd'
 import axios from 'axios'
-export const  API = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/',
-    baseURL: 'https://jsonplaceholder.typicode.com/',
-    baseURL: 'https://jsonplaceholder.typicode.com/',
+const API = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com/',
 })
 
 
+export {API}

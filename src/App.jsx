@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 import { RouterProvider } from "react-router-dom";
-import  {router} from './page/routers'
+import  {router} from './pages/routers'
 
 function App() {
-  return <RouterProvider router={router} />
+  return <div>
+      <RouterProvider router={router} />
+    </div>
 }
 
 export default App;

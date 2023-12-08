@@ -3,6 +3,8 @@ import Comments from '../../Components/Comments/Comments'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchComments } from '../../store/comments/actions';
 import { getComments } from '../../store/comments/selector';
+import { Spin } from 'antd';
+import s from './comment.module.css'
 const CommentsContainer = () => {
     const {isLoad, error, comments} = useSelector(getComments)
     const dispatch = useDispatch()
@@ -11,7 +13,9 @@ const CommentsContainer = () => {
     }, [dispatch])
     return (
         <>
-            {isLoad ? <h1>loading</h1> : <Comments comments={comments} error={error} />}
+                <Spin  tip="Loading" spinning={isLoad}>
+                    <Comments comments={comments} error={error} />
+                </Spin>
         </>
     );
 };

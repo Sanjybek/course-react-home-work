@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert} from 'antd';
 
 function Comments ({error, comments})  {
     if(error) return <h1>{error}</h1>
@@ -15,6 +16,7 @@ function Comments ({error, comments})  {
                     )
                 })}
             </ul>    
+            
         </>
     );
 };
